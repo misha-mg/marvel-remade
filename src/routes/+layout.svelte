@@ -6,6 +6,14 @@
   import { onMount } from "svelte";
 
   $: currentRoute = $page.url;
+
+  let navbar;
+  onMount(() => {
+    navbar = document.querySelector("#navbarNav");
+  });
+  function toggleNav() {
+    navbar.classList.toggle("show");
+  }
 </script>
 
 <div class="container">
@@ -28,18 +36,19 @@
             aria-controls="navbarNav"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            on:click={toggleNav}
           >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav header-nav-items">
-              <li class="nav-item">
+            <ul class="navbar-nav header-nav-items pt-md-0 pt-3">
+              <li class="nav-item text-md-start text-center">
                 <a class:active={currentRoute.pathname == "/"} href="/"
                   >Characters
                 </a>
               </li>
               <p class="d-none d-md-block">/</p>
-              <li class="nav-item">
+              <li class="nav-item text-md-start text-center">
                 <a
                   class:active={currentRoute.pathname == "/comics"}
                   href="/comics"
