@@ -1,12 +1,14 @@
-.char-item {
+.charItem {
   width: 100%;
   min-height: 100%;
   background-color: #232222;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: all 0.3s;
+  
 
-  &:hover, &:active {
+  &:hover,
+  &:active {
     box-shadow: 0 5px 20px #9f0013;
     transform: translateY(-8px);
   }
@@ -17,7 +19,7 @@
     img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
   }
   &-name {

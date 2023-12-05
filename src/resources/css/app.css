@@ -43,40 +43,40 @@ span,
   font-weight: bold;
 }
 
-.randomchar {
+.randomChar {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
 }
-.randomchar-spinner-img {
+.randomChar-spinner-img {
   width: 180px;
   height: 100%;
   min-height: 180px;
 }
-.randomchar-spinner-img img {
+.randomChar-spinner-img img {
   width: 100%;
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
 }
-.randomchar-spinner {
+.randomChar-spinner {
   padding: 40px 35px;
   display: grid;
   grid-template-columns: 180px auto;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
-.randomchar-spinner-content {
+.randomChar-spinner-content {
   display: grid;
   grid-template-rows: minmax(29px, auto) min-content 38px;
   row-gap: 10px;
   padding-top: 3px;
 }
-.randomchar-info {
+.randomChar-info {
   padding: 40px 35px;
   background-color: #232222;
   position: relative;
   color: #fff;
 }
-.randomchar-info-decoration {
+.randomChar-info-decoration {
   position: absolute;
   bottom: 14px;
   right: 10px;
@@ -85,35 +85,35 @@ span,
   max-width: 120px;
   min-width: 75px;
 }
-.randomchar-info-title, .randomchar-info-subtitle {
+.randomChar-info-title, .randomChar-info-subtitle {
   font-weight: bold;
   font-size: 24px;
 }
 
-.charinfo {
+.charInfo {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
   position: sticky;
   top: 25px;
   overflow: hidden;
 }
-.charinfo-img {
+.charInfo-img {
   width: 150px;
   height: 150px;
 }
-.charinfo-img img {
+.charInfo-img img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.charinfo-name {
+.charInfo-name {
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
   word-wrap: break-word;
 }
 
-.char-item {
+.charItem {
   width: 100%;
   min-height: 100%;
   background-color: #232222;
@@ -121,25 +121,62 @@ span,
   cursor: pointer;
   transition: all 0.3s;
 }
-.char-item:hover, .char-item:active {
+.charItem:hover, .charItem:active {
   box-shadow: 0 5px 20px #9f0013;
   transform: translateY(-8px);
 }
-.char-item-img {
+.charItem-img {
   width: 100%;
   height: 200px;
 }
-.char-item-img img {
+.charItem-img img {
   width: 100%;
   height: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-.char-item-name {
+.charItem-name {
   font-weight: bold;
   font-size: 18px;
   text-transform: uppercase;
   color: #fff;
+}
+
+.appBanner {
+  background-color: #232222;
+  height: 100px;
+}
+.appBanner p {
+  font-weight: bold;
+  font-size: clamp(18px, 3vw, 24px);
+  color: #ffffff;
+}
+.appBanner img {
+  height: 100px;
+}
+
+.comicsItem {
+  transition: all 0.3s;
+}
+.comicsItem:hover {
+  transform: translateY(-5px);
+}
+.comicsItem img {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  aspect-ratio: 0.652;
+}
+.comicsItem-title {
+  font-size: clamp(18px, 3vw, 20px);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #000;
+}
+.comicsItem-price {
+  font-weight: bold;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
 }
 
 .button {

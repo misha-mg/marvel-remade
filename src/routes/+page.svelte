@@ -6,17 +6,17 @@
 </script>
 
 <div class="container">
-  <div class="row randomchar mb-4">
+  <div class="row randomChar mb-4">
     <RandomChar />
   </div>
 </div>
 
-<div class="container">
+<div class="container p-0">
   <div class="row d-flex justify-content-between">
     <div class="col-xl-8 col-md-6 col-sm-12">
       <CharList />
     </div>
-    <div class="col-xl-4 col-md-6 col-sm-12">
+    <div class="col-xl-4 col-md-6 col-sm-12 order-md-last order-first mb-4">
       <CharInfo />
     </div>
   </div>
