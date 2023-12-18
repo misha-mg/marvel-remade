@@ -29,3 +29,14 @@
     color: #fff;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .charItem {
+    &-img {
+    height: 140px;
+   }
+   &-name {
+    font-size: 16px;
+    }
+  }
+}

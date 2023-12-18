@@ -6,6 +6,7 @@
 
   &-img {
     width: 150px;
+    min-width: 150px;
     height: 150px;
 
     img {
@@ -16,7 +17,7 @@
   }
   &-name {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
     word-wrap: break-word;
   }

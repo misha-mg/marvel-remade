@@ -1,0 +1,13 @@
+.single-comic {
+  &-img {
+    aspect-ratio: 0.651;
+    object-fit: contain;
+  }
+  &-description {
+    font-size: 18px;
+  }
+  &-price {
+    font-size: 25px;
+    color: #9f0013;
+  }
+}

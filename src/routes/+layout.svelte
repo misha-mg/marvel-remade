@@ -17,7 +17,7 @@
 </script>
 
 <div class="container">
-  <div class="row mb-4">
+  <div class="row mb-3">
     <div class="col-12 p-0">
       <nav class="navbar navbar-expand-md navbar-light">
         <div class="container p-0">
@@ -43,13 +43,17 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav header-nav-items pt-md-0 pt-3">
               <li class="nav-item text-md-start text-center">
-                <a class:active={currentRoute.pathname == "/"} href="/"
+                <a
+                  on:click={() => navbar.classList.remove("show")}
+                  class:active={currentRoute.pathname == "/"}
+                  href="/"
                   >Characters
                 </a>
               </li>
-              <p class="d-none d-md-block">/</p>
+              <p class="d-none d-md-block px-1">/</p>
               <li class="nav-item text-md-start text-center">
                 <a
+                  on:click={() => navbar.classList.remove("show")}
                   class:active={currentRoute.pathname == "/comics"}
                   href="/comics"
                 >
