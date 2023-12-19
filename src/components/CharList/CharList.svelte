@@ -9,19 +9,17 @@
   let error = false;
   let offset = 210;
 
-  onMount(() => {
-    (async () => {
-      loading = true;
-      error = false;
-      const asyncRequests = new AsyncRequests();
-      let result = await asyncRequests.getAllChars();
-      data = result.data?.results;
+  onMount(async () => {
+    loading = true;
+    error = false;
+    const asyncRequests = new AsyncRequests();
+    let result = await asyncRequests.getAllChars();
+    data = result.data?.results;
 
-      if (result.code !== 200) {
-        error = true;
-      }
-      loading = false;
-    })();
+    if (result.code !== 200) {
+      error = true;
+    }
+    loading = false;
   });
 
   function loadMore() {
@@ -74,11 +72,7 @@
   {#if !loading && !error}
     <div class="row">
       <div class="col-12 text-center">
-        <button
-          class:disabled={false}
-          class="button"
-          on:click={() => loadMore()}
-        >
+        <button class:disabled={false} class="button" on:click={loadMore}>
           <div class="inner">load more</div>
         </button>
       </div>

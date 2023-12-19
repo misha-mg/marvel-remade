@@ -72,11 +72,7 @@
   {#if !loading && !error}
     <div class="row">
       <div class="col-12 text-center">
-        <button
-          class:disabled={false}
-          class="button"
-          on:click={() => loadMore()}
-        >
+        <button class:disabled={false} class="button" on:click={loadMore}>
           <div class="inner">load more</div>
         </button>
       </div>

@@ -51,7 +51,7 @@
       </div>
       <div class="charInfo-text">
         <div class="charInfo-name">{char?.name}</div>
-        <div class="char__descr mt-3">
+        <div class="char-descr mt-3">
           {char?.description
             ? char?.description
             : "This character has no description"}

@@ -11,21 +11,19 @@
   let error = false;
   let offset = 210;
 
-  onMount(() => {
-    (async () => {
-      loading = true;
-      error = false;
-      const asyncRequests = new AsyncRequests();
-      let result = await asyncRequests.getOneComic(comicId);
-      data = result.data.results[0];
+  onMount(async () => {
+    loading = true;
+    error = false;
+    const asyncRequests = new AsyncRequests();
+    let result = await asyncRequests.getOneComic(comicId);
+    data = result.data.results[0];
 
-      console.log(data);
+    console.log(data);
 
-      if (result.code !== 200) {
-        error = true;
-      }
-      loading = false;
-    })();
+    if (result.code !== 200) {
+      error = true;
+    }
+    loading = false;
   });
 </script>
 
@@ -50,7 +48,7 @@
         />
       </div>
     {:else}
-      <div class="col-md-3 col-sm-12 mb-md-0 mb-3">
+      <div class="col-md-3 col-sm-12 mb-md-0 mb-3 p-0">
         <img
           src={`${data?.thumbnail?.path}.${data?.thumbnail?.extension}`}
           alt="name"

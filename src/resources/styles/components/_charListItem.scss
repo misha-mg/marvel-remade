@@ -5,7 +5,6 @@
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: all 0.3s;
-  
 
   &:hover,
   &:active {
@@ -33,10 +32,10 @@
 @media screen and (max-width: 576px) {
   .charItem {
     &-img {
-    height: 140px;
-   }
-   &-name {
-    font-size: 16px;
+      height: 140px;
+    }
+    &-name {
+      font-size: 16px;
     }
   }
 }
