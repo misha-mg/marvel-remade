@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
   import { onMount } from "svelte";
   import AppBanner from "../../../components/AppBanner/AppBanner.svelte";
-  import { AsyncRequests } from "$lib/utils";
+  import { AsyncRequest } from "$lib/utils";
 
   let comicId = $page.params.item;
 
@@ -14,11 +14,14 @@
   onMount(async () => {
     loading = true;
     error = false;
-    const asyncRequests = new AsyncRequests();
-    let result = await asyncRequests.getOneComic(comicId);
+    const asyncRequest = new AsyncRequest({
+      method: "comics",
+      data: {
+        id: comicId,
+      },
+    });
+    let result = await asyncRequest.getSingleData();
     data = result.data.results[0];
-
-    console.log(data);
 
     if (result.code !== 200) {
       error = true;

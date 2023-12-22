@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import ComicsListItem from "../ComicsListItem/ComicsListItem.svelte";
-  import { AsyncRequests } from "$lib/utils";
+  import { AsyncRequest } from "$lib/utils";
 
   export let getComicId = () => {};
 
@@ -14,8 +14,14 @@
     (async () => {
       loading = true;
       error = false;
-      const asyncRequests = new AsyncRequests();
-      let result = await asyncRequests.getAllComics(offset);
+      const asyncRequest = new AsyncRequest({
+        method: "comics",
+        data: {
+          limit: 8,
+          offset: offset,
+        },
+      });
+      let result = await asyncRequest.getNumerousData();
       data = result.data?.results;
 
       if (result.code !== 200) {
@@ -29,8 +35,14 @@
     offset += 8;
     loading = true;
     error = false;
-    const asyncRequests = new AsyncRequests();
-    let result = await asyncRequests.getAllComics(offset);
+    const asyncRequest = new AsyncRequest({
+      method: "comics",
+      data: {
+        limit: 8,
+        offset: offset,
+      },
+    });
+    let result = await asyncRequest.getNumerousData();
     data = [...data, ...result.data?.results];
 
     if (result.code !== 200) {

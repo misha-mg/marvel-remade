@@ -1,5 +1,5 @@
 <script>
-  import { AsyncRequests } from "$lib/utils";
+  import { AsyncRequest } from "$lib/utils";
   import { onMount } from "svelte";
   import CharListItem from "../CharListItem/CharListItem.svelte";
 
@@ -7,13 +7,19 @@
   let data = [];
   let loading = true;
   let error = false;
-  let offset = 210;
+  let offset = 200;
 
   onMount(async () => {
     loading = true;
     error = false;
-    const asyncRequests = new AsyncRequests();
-    let result = await asyncRequests.getAllChars();
+    const asyncRequest = new AsyncRequest({
+      method: "characters",
+      data: {
+        limit: 6,
+        offset: offset,
+      },
+    });
+    let result = await asyncRequest.getNumerousData();
     data = result.data?.results;
 
     if (result.code !== 200) {
@@ -22,20 +28,24 @@
     loading = false;
   });
 
-  function loadMore() {
-    (async () => {
-      loading = true;
-      error = false;
-      offset += 6;
-      const asyncRequests = new AsyncRequests();
-      let result = await asyncRequests.getAllChars(offset);
-      data = [...data, ...result.data?.results];
+  async function loadMore() {
+    loading = true;
+    error = false;
+    offset += 6;
+    const asyncRequest = new AsyncRequest({
+      method: "characters",
+      data: {
+        limit: 6,
+        offset: offset,
+      },
+    });
+    let result = await asyncRequest.getNumerousData();
+    data = [...data, ...result.data?.results];
 
-      if (result.code !== 200) {
-        error = true;
-      }
-      loading = false;
-    })();
+    if (result.code !== 200) {
+      error = true;
+    }
+    loading = false;
   }
 </script>
 

@@ -1,5 +1,5 @@
 <script>
-  import { AsyncRequests } from "$lib/utils";
+  import { AsyncRequest } from "$lib/utils";
   import { onMount } from "svelte";
 
   export let id = Math.floor(Math.random() * 400 + 1011000);
@@ -10,10 +10,15 @@
   async function getChar() {
     loading = true;
     error = false;
-    const asyncRequests = new AsyncRequests();
-    let result = await asyncRequests.getOneChar(id);
+    const asyncRequest = new AsyncRequest({
+      method: "characters",
+      data: {
+        id: Math.floor(Math.random() * 400 + 1011000),
+      },
+    });
+    let result = await asyncRequest.getSingleData();
     char = result.data?.results[0];
-    console.log(char);
+
     if (result.code !== 200) {
       error = true;
     }
@@ -60,12 +65,12 @@
     </div>
     <div class="d-flex flex-column justify-content-between">
       <div class="charInfo-btns d-flex gap-2">
-        <button class="button button-main mb-2">
-          <a href={char?.urls[0].url}> Homepage </a>
-        </button>
-        <button class="button button-secondary">
-          <a href={char?.urls[0].url}> Wiki </a>
-        </button>
+        <a href={char?.urls[0].url}>
+          <button class="button button-main mb-2"> Homepage </button>
+        </a>
+        <a href={char?.urls[0].url}>
+          <button class="button button-secondary"> Wiki </button>
+        </a>
       </div>
     </div>
   {/if}

@@ -1,8 +1,10 @@
 <script>
+  import { onMount } from "svelte";
   import CharInfo from "../components/CharInfo/CharInfo.svelte";
   import CharList from "../components/CharList/CharList.svelte";
   import CharListItem from "../components/CharListItem/CharListItem.svelte";
   import RandomChar from "../components/RandomChar/RandomChar.svelte";
+  import { AsyncRequest } from "$lib/utils";
 
   let idFromList;
   function getCharId(newId) {
