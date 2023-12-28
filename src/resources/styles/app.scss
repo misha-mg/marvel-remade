@@ -4,6 +4,7 @@ body {
   margin: 0 auto;
   background-color: $backgrount-color1;
   color: $text-color;
+  transition: color, background .2s;
 }
 p {
   margin: 0;

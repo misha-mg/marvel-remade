@@ -24,6 +24,7 @@ body {
   margin: 0 auto;
   background-color: var(--backgrount-color1);
   color: var(--text-color);
+  transition: color, background 0.2s;
 }
 
 p {
