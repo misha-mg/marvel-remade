@@ -1,13 +1,13 @@
 .button {
   width: 101px;
   height: 40px;
-  color: #fff !important;
+  color: #fff;
   text-align: center;
   text-transform: uppercase;
   font-size: 14px;
   transition: 0.3s transform;
   border: none;
-  background-color: #9f0013;
+  background-color: $focus-color;
   line-height: 18px;
   cursor: pointer;
 

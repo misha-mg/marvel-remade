@@ -1,10 +1,10 @@
 .appBanner {
-  background-color: #232222;
+  background-color: $backgrount-color2;
   height: 100px;
   p {
     font-weight: bold;
     font-size: clamp(18px, 3vw, 24px);
-    color: #ffffff;
+    color: $text-color2;
   }
 
   img {

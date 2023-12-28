@@ -1,0 +1,52 @@
+:root {
+    --theme-value: light;
+
+  --backgrount-color1-light: #fff;
+  --backgrount-color2-light: #232222;
+  --text-color-light: #000;
+  --text-color2-light: #fff;
+  --focus-color-light: #9f0013;
+  --focus-color2-light: #5c5c5c;
+
+  --backgrount-color1-dark: #303030;
+  --backgrount-color2-dark: #ffffff;
+  --text-color-dark: #f0f0f0;
+  --text-color2-dark: #141414;
+  --focus-color-dark: #d10d24;
+  --focus-color2-dark: #444444;
+
+  --backgrount-color1: #fff;
+  --backgrount-color2: #232222;
+  --text-color: #000;
+  --text-color2: #fff;
+  --focus-color: #9f0013;
+  --focus-color2: #5c5c5c;
+
+}
+
+$backgrount-color1: var(--backgrount-color1);
+$backgrount-color2: var(--backgrount-color2);
+$text-color: var(--text-color);
+$text-color2: var(--text-color2);
+$focus-color: var(--focus-color);
+$focus-color2: var(--focus-color2);
+
+
+
+// $theme: var(--theme-value);
+// @if $theme == var(--theme-value) {
+    // $backgrount-color1: var(--backgrount-color1-light) !global;
+    // $backgrount-color2: var(--backgrount-color2-light) !global;
+    // $text-color: var(--text-color-light) !global;
+    // $text-color2: var(--text-color2-light) !global;
+    // $focus-color: var(--focus-color-light) !global;
+    // $focus-color2: var(--focus-color2-light) !global;
+// } @else if $theme == dark {
+//     $backgrount-color1: var(--backgrount-color1-dark) !global;
+//     $backgrount-color2: var(--backgrount-color2-dark) !global;
+//     $text-color: var(--text-color-dark) !global;
+//     $text-color2: var(--text-color2-dark) !global;
+//     $focus-color: var(--focus-color-dark) !global;
+//     $focus-color2: var(--focus-color2-dark) !global;
+// }
+

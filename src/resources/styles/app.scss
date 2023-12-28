@@ -1,16 +1,20 @@
+@import "../styles/components/variables";
+
 body {
   margin: 0 auto;
+  background-color: $backgrount-color1;
+  color: $text-color;
 }
 p {
   margin: 0;
 }
 a {
   text-decoration: none;
-  color: #000;
+  color: $text-color;
   transition: all 0.2s;
 }
 a:hover {
-  color: #9f0013;
+  color: $focus-color;
 }
 ol,
 ul {
@@ -18,7 +22,7 @@ ul {
 }
 span,
 .active {
-  color: #9f0013;
+  color: $focus-color;
 }
 
 @media (min-width: 768px) {
@@ -36,10 +40,10 @@ span,
 @import "../styles/components/charInfo";
 @import "../styles/components/charListItem";
 @import "../styles/components/appBanner";
-@import "../styles/components/comicList";
 @import "../styles/components/comicsListItem";
 @import "../styles/components/singleComicPage";
 
 // COMPONENTS / ELEMENTS
 
 @import "../styles/components/button";
+@import "../styles/components/theme-button";

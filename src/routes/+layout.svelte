@@ -4,6 +4,7 @@
   import "../resources/css/app.css";
   import { page } from "$app/stores";
   import { onMount } from "svelte";
+  import ThemeButton from "../elements/ThemeButton.svelte";
 
   $: currentRoute = $page.url;
 
@@ -13,6 +14,28 @@
   });
   function toggleNav() {
     navbar.classList.toggle("show");
+  }
+
+  let theme = "light";
+
+  function setTheme() {
+    theme = theme == "light" ? "dark" : "light";
+    changeTheme();
+  }
+
+  function changeTheme() {
+    let backgrountColor1 = `var(--backgrount-color1-${theme})`;
+    let backgrountColor2 = `var(--backgrount-color2-${theme})`;
+    let textColor = `var(--text-color-${theme})`;
+    let textColor2 = `var(--text-color2-${theme})`;
+    let focusColor = `var(--focus-color-${theme})`;
+    let focusColor2 = `var(--focus-color2-${theme})`;
+    document.body.style.setProperty("--backgrount-color1", backgrountColor1);
+    document.body.style.setProperty("--backgrount-color2", backgrountColor2);
+    document.body.style.setProperty("--text-color", textColor);
+    document.body.style.setProperty("--text-color2", textColor2);
+    document.body.style.setProperty("--focus-color", focusColor);
+    document.body.style.setProperty("--focus-color2", focusColor2);
   }
 </script>
 
@@ -28,6 +51,7 @@
               <p class="d-md-inline d-none">information portal</p>
             </a>
           </h1>
+          <ThemeButton customFunction={setTheme} currentThemeClass={theme} />
           <button
             class="navbar-toggler"
             type="button"

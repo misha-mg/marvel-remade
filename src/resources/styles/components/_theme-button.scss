@@ -1,0 +1,33 @@
+.theme-button {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border: none;
+
+  .theme-button-content {
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: block;
+    width: 100%;
+    height: 100%;
+    transition: background-image 0.2s;
+
+    &.light {
+      background-image: url(/theme-dark.png);
+    }
+    &.dark {
+      background-image: url(/theme-light.png);
+      transform: rotate(180deg);
+    }
+
+    @media screen and (min-width: 769px) {
+      &:hover {
+        background-image: url(/theme-semi-dark.png);
+      }
+
+      &:active {
+        background-image: url(/non-theme.png);
+      }
+    }
+  }
+}
