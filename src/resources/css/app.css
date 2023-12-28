@@ -7,9 +7,9 @@
   --focus-color-light: #9f0013;
   --focus-color2-light: #5c5c5c;
   --backgrount-color1-dark: #303030;
-  --backgrount-color2-dark: #ffffff;
+  --backgrount-color2-dark: #1b1b1b;
   --text-color-dark: #f0f0f0;
-  --text-color2-dark: #141414;
+  --text-color2-dark: #b8b8b8;
   --focus-color-dark: #d10d24;
   --focus-color2-dark: #444444;
   --backgrount-color1: #fff;
@@ -241,7 +241,7 @@ span,
 .comicsItem-price {
   font-weight: bold;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
+  color: var(--focus-color);
   text-transform: uppercase;
 }
 
