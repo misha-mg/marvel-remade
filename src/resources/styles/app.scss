@@ -9,7 +9,7 @@ body {
 p {
   margin: 0;
 }
-a {
+a, nav-item > a {
   text-decoration: none;
   color: $text-color;
   transition: all 0.2s;
